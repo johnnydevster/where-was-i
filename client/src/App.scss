@@ -1,0 +1,321 @@
+$font-family: Open Sans, sans-serif;
+
+// Heights
+$header-height: 50vh;
+$main-height: 100vh - $header-height;
+$main-vertical-indent: 42vh;
+$drop-main-height: $main-height + $main-vertical-indent;
+
+$font-color: rgb(99, 99, 99);
+$box-shadow: 0 4px 12px 0px rgba(0,0,0,.25);
+$loading-background: #f5f5f5;
+
+@mixin content-text {
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+header {
+  color: white;
+  padding: 20px;
+  text-align: center;
+  background-image: url('#');
+  background: rgb(0,159,255);
+  background: linear-gradient(180deg, rgb(0, 75, 122) 0%, rgb(0, 91, 148) 100%);
+  height: 5rem;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.274) inset;
+}
+
+
+.main {
+  width: 100%;
+  background-color: rgba(245, 245, 245, 0.5);
+  height: 100%;
+  position: relative;
+}
+
+.drop-main {
+  width: 100%;
+  /*
+  height: $drop-main-height;
+  */
+  border-radius: 20px 20px 0 0;
+  background-color: white;
+  position: static;
+  
+  margin: auto;
+  box-shadow: 0 4px 12px 0px rgba(0,0,0,.25);
+}
+
+.dropwindow {
+  margin: 3rem 2rem;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 6rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-width: 2px;
+  border-radius: 10px;
+  border-style: dashed;
+  background-color: #fafafa;
+  color: #bdbdbd;
+  outline: none;
+  transition: border .24s ease-in-out;
+  cursor: pointer;
+}
+
+.herocontent {
+  width: 100%;
+  padding: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  background-color: #1690c9;
+  text-align: center;
+  > p {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.herocontent > span {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: white;
+}
+
+.textcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem;
+  > h3 {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $font-color;
+  line-height: 1.8rem;
+  text-align: center;
+  }
+}
+
+.textcontent > p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $font-color;
+  padding: 0 3rem;
+  line-height: 1.8rem;
+  text-align: center;
+}
+
+.imagecontainer {
+  justify-content: center;
+  max-height: 550px;
+  margin: 3rem auto;
+  width: 95%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  > img {
+    border-radius: 5px;
+    object-fit: cover;
+    max-width:100%;
+    max-height: inherit;
+    &.landmarkloading {
+      opacity: 0.3;
+    }
+  }
+}
+
+.notfound {
+  background-color: rgb(255, 77, 77);
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.landmarkinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.3rem;
+  color: $font-color;
+  margin: 1rem;
+  text-align: center;
+  line-height: 2rem;
+  p {
+    padding-top: 0.5rem;
+  }
+  span {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+}
+
+.wikiloading {
+  width: 50%;
+  height: 30vh;
+  background-color: $loading-background;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wikipediainfo {
+  display: flex;
+  margin: 1rem auto;
+  width: 90%;
+  flex-direction: column;
+  
+}
+
+.wikisummary {
+  line-height: 1.8rem;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 1rem;
+  order: 1;
+  > p {
+    padding: 0.4rem 0.1rem;
+  }
+  > a {
+    padding-top: 0.5rem;
+    padding-left: 0.2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgb(138, 138, 138);
+  }
+}
+
+.wikiimg {
+  background-color: transparent;
+  margin: 2rem auto;
+  max-width: 30rem;
+  max-height: 40rem;
+  order: 0;
+  > img {
+    box-shadow: $box-shadow;
+    object-fit: contain;
+    width:100%;
+    max-height: inherit;
+  }
+}
+
+.maps {
+  border-radius: 5px;
+  display: block;
+  margin: 2rem auto;
+  border: 0;
+  width: 80%;
+  height: 40vh;
+}
+
+.back-to-top {
+  margin: 12px;
+  z-index: 10;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  header {
+    background-image: url('#');
+    background: rgb(0,159,255);
+    background: linear-gradient(180deg, rgb(0, 75, 122) 0%, rgb(0, 91, 148) 100%);
+    position: static;
+    height: 5rem;
+    }
+
+  .drop-main {
+    position: static;
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .drop-main {
+  }
+
+  .wikiimg {
+    max-width: 45rem;
+  }
+
+  .wikisummary {
+  }
+  
+  .dropwindow {
+    width: 85%;
+    margin: 3rem auto;
+  }
+
+  .herocontent {
+    > p {
+      width: 60%;
+    }
+  }
+
+  .back-to-top {
+    margin: 20px;
+  }
+
+  header {
+  background-image: url('./header-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 30%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .drop-main {
+    position: absolute;
+    width: 1000px;
+    top: -$main-vertical-indent;
+    left: 0;
+    right: 0;
+  }
+
+  .dropwindow {
+    width: 70%;
+  }
+  .herocontent {
+    border-radius: 10px 10px 0 0;
+  }
+  header {
+    height: $header-height;
+  }
+}
+
+
+
